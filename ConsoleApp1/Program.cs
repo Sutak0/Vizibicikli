@@ -57,9 +57,16 @@ namespace Vizibicikli
             }
             else {
                 Console.WriteLine($"\t{nev} kölcsönzései: ");
-
-                
+                foreach (var aktKolcsonzes in kolcsonzesek.Where(x => x.Nev == nev))
+                {
+                    Console.WriteLine($"\t{aktKolcsonzes.EOra}:{aktKolcsonzes.EPerc} - {aktKolcsonzes.VOra}:{aktKolcsonzes.VPerc}");
                 }
+
+                //8.
+                Console.WriteLine("8. Feladat: A napi bevétel:", kolcsonzesek.Sum(ob => ob.idoHossz()) / 30 + 1);
+
+                //10 --
+            }
                  
             }
         }
